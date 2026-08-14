@@ -1,1 +1,517 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gee Vox Tech — Développement, Termux, cybersécurité et outils numériques.">
+  <title>Gee Vox Tech</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #050805;
+      color: #d9ffe3;
+      font-family: "Courier New", monospace;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #39ff88;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #9affbb;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(3, 8, 4, 0.95);
+      border-bottom: 1px solid #19ff68;
+      padding: 15px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #39ff88;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 12px #19ff68;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        radial-gradient(circle at center, rgba(0,255,90,.15), transparent 45%),
+        #050805;
+    }
+
+    .hero-box {
+      max-width: 900px;
+      border: 1px solid #19ff68;
+      padding: 50px 30px;
+      box-shadow: 0 0 35px rgba(25,255,104,.15);
+      background: rgba(0, 20, 8, .45);
+    }
+
+    .terminal {
+      color: #39ff88;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 9vw, 90px);
+      color: #39ff88;
+      text-shadow: 0 0 20px #19ff68;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: #a9ffbf;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid #39ff88;
+      padding: 12px 20px;
+      transition: .3s;
+      background: transparent;
+    }
+
+    .btn:hover {
+      background: #39ff88;
+      color: #031006;
+      box-shadow: 0 0 20px #19ff68;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      color: #39ff88;
+      font-size: 32px;
+      margin-bottom: 35px;
+      text-shadow: 0 0 10px #19ff68;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      border-left: 3px solid #39ff88;
+      padding: 25px;
+      background: #071009;
+    }
+
+    .about p {
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: #39ff88;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #155c2d;
+      padding: 25px;
+      background: #071009;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #39ff88;
+      box-shadow: 0 0 20px rgba(25,255,104,.2);
+    }
+
+    .card h3 {
+      color: #39ff88;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 15px;
+      border: 1px solid #155c2d;
+      padding: 5px 9px;
+      font-size: 12px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .stat {
+      text-align: center;
+      border: 1px solid #155c2d;
+      padding: 20px;
+      background: #071009;
+    }
+
+    .stat strong {
+      display: block;
+      color: #39ff88;
+      font-size: 30px;
+    }
+
+    .terminal-box {
+      max-width: 900px;
+      margin: auto;
+      background: #020402;
+      border: 1px solid #39ff88;
+      padding: 25px;
+      overflow-x: auto;
+      box-shadow: inset 0 0 30px rgba(25,255,104,.05);
+    }
+
+    .terminal-line {
+      margin-bottom: 8px;
+    }
+
+    .prompt {
+      color: #39ff88;
+    }
+
+    footer {
+      border-top: 1px solid #155c2d;
+      padding: 35px 20px;
+      text-align: center;
+      background: #030603;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 9px;
+      height: 18px;
+      background: #39ff88;
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      .hero-box {
+        padding: 35px 18px;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GEE VOX TECH</div>
+
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#about">À propos</a>
+    <a href="#tools">Tools</a>
+    <a href="#projects">Projets</a>
+    <a href="#tutorials">Tutoriels</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-box">
+
+    <div class="terminal">
+      root@geevox:~$ ./start_gee_vox.sh
+    </div>
+
+    <h1>GEE VOX</h1>
+
+    <p class="subtitle">
+      TECH • TERMUX • CYBERSECURITY • DEVELOPMENT
+    </p>
+
+    <p>
+      Bienvenue dans l'univers de <span class="highlight">Gee Vox Tech</span>.
+      Découvrez mes projets, mes outils et mes expérimentations technologiques.
+    </p>
+
+    <div class="buttons">
+      <a class="btn" href="#tools">EXPLORER LES TOOLS</a>
+      <a class="btn" href="#about">À PROPOS DE MOI</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">&gt; ABOUT_GEE_VOX</h2>
+
+  <div class="about">
+    <p>
+      <span class="highlight">Je suis Gee Vox</span>, sous-chef du clan CDM,
+      fils de Lord Demon Darkseid.
+    </p>
+
+    <p>
+      Je suis développeur et passionné par la technologie, Termux,
+      la cybersécurité, l'automatisation et la création d'outils numériques.
+    </p>
+
+    <p>
+      Mon objectif est d'apprendre, expérimenter, développer et partager
+      des connaissances et des projets technologiques.
+    </p>
+
+    <p>
+      <span class="highlight">Gee Vox Tech</span> est mon espace personnel
+      pour présenter mes outils, mes projets et mes travaux.
+    </p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <strong>01</strong>
+      Profil
+    </div>
+
+    <div class="stat">
+      <strong>∞</strong>
+      Idées
+    </div>
+
+    <div class="stat">
+      <strong>24/7</strong>
+      Learning
+    </div>
+
+    <div class="stat">
+      <strong>TECH</strong>
+      Mission
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2 class="section-title">&gt; GEE_VOX_TOOLS</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Gee Vox CyberSecurity</h3>
+      <p>
+        Collection d'outils et de ressources dédiés à l'apprentissage
+        de la cybersécurité et à l'audit autorisé.
+      </p>
+      <span class="tag">SECURITY</span>
+    </div>
+
+    <div class="card">
+      <h3>Termux Tools</h3>
+      <p>
+        Scripts et utilitaires pour apprendre à utiliser Termux,
+        automatiser des tâches et expérimenter avec Linux sur Android.
+      </p>
+      <span class="tag">TERMUX</span>
+    </div>
+
+    <div class="card">
+      <h3>Network Scanner</h3>
+      <p>
+        Outils d'analyse de réseau destinés aux environnements
+        que tu possèdes ou que tu es autorisé à tester.
+      </p>
+      <span class="tag">NETWORK</span>
+    </div>
+
+    <div class="card">
+      <h3>WiFi Security Audit</h3>
+      <p>
+        Ressources pour vérifier la sécurité de tes propres réseaux
+        WiFi et comprendre les bonnes pratiques de protection.
+      </p>
+      <span class="tag">WIFI SECURITY</span>
+    </div>
+
+    <div class="card">
+      <h3>Spam Report</h3>
+      <p>
+        Outils et ressources pour identifier et signaler
+        les contenus indésirables ou abusifs via les mécanismes officiels.
+      </p>
+      <span class="tag">REPORT</span>
+    </div>
+
+    <div class="card">
+      <h3>Linux & Scripts</h3>
+      <p>
+        Scripts et commandes pour apprendre Linux, le shell,
+        l'automatisation et l'administration système.
+      </p>
+      <span class="tag">LINUX</span>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">&gt; PROJECTS</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Gee Vox Tech</h3>
+      <p>
+        Plateforme personnelle regroupant mes outils,
+        projets et ressources technologiques.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Termux Lab</h3>
+      <p>
+        Espace d'expérimentation consacré à Termux,
+        Linux et aux scripts.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Cyber Lab</h3>
+      <p>
+        Environnement d'apprentissage pour la cybersécurité
+        et les tests autorisés.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="tutorials">
+  <h2 class="section-title">&gt; TUTORIALS</h2>
+
+  <div class="terminal-box">
+
+    <div class="terminal-line">
+      <span class="prompt">geevox@termux:~$</span> pkg update
+    </div>
+
+    <div class="terminal-line">
+      <span class="prompt">geevox@termux:~$</span> pkg upgrade
+    </div>
+
+    <div class="terminal-line">
+      <span class="prompt">geevox@termux:~$</span> pkg install git python
+    </div>
+
+    <div class="terminal-line">
+      <span class="prompt">geevox@termux:~$</span> echo "Welcome to Gee Vox Tech"
+    </div>
+
+    <div class="terminal-line">
+      <span class="prompt">geevox@termux:~$</span> _
+      <span class="cursor"></span>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">&gt; CONTACT</h2>
+
+  <div class="about">
+
+    <p>
+      Retrouvez les projets et développements de Gee Vox Tech sur GitHub.
+    </p>
+
+    <div class="buttons">
+      <a class="btn"
+         href="https://github.com/geevoxtech55-jpg"
+         target="_blank">
+        GITHUB
+      </a>
+
+      <a class="btn" href="mailto:contact@geevoxtech.example">
+        EMAIL
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>
+    © 2026 <span class="highlight">Gee Vox Tech</span>
+  </p>
+
+  <p>
+    THINK • CODE • BUILD • PROGRESS
+  </p>
+</footer>
+
+</body>
+</html>
+```
 
