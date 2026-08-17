@@ -1,182 +1,51 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-GEE VOX SPAM TOOL – Simulation technique pour Termux
-Avertissement : Ce script est une DEMO pour des tests en laboratoire.
-"""
-
-import requests, random, time
-from fake_useragent import UserAgent
-
-# Configuration
-TARGET_URL = "http://test-site.com"  # Remplace par une URL de test (ex: ton propre site)
-SPAM_MESSAGES = [
-    "Test de spam – Ignorer",
-    "Message automatique – Simulation",
-    "https://example.com/fake-link",
-    "Votre compte a été piraté !"
-]
-DELAY = 2  # Délai entre les requêtes (secondes)
-
-# Générateur de headers aléatoires
-ua = UserAgent()
-
-def send_spam():
-    """Envoie des requêtes spam avec des headers aléatoires."""
-    print("[GEE VOX] Démarrage du spam (simulation)...")
-    for msg in SPAM_MESSAGES:
-        headers = {"User-Agent": ua.random}
-        try:
-            # Simulation d'envoi (remplace par une vraie API si besoin)
-            print(f"[SPAM] Envoyé: {msg[:30]}... (Headers: {headers['User-Agent']})")
-            time.sleep(DELAY)
-        except Exception as e:
-            print(f"[ERREUR] {e}")
-
-if __name__ == "__main__":
-    print("""
-    ███████╗██╗   ██╗███████╗██████╗ ███████╗██████╗ ███████╗
-    ██╔════╝██║   ██║██╔════╝██╔══██╗██╔════╝██╔══██╗██╔════╝
-    █████╗  ██║   ██║█████╗  ██████╔╝█████╗  ██████╔╝█████╗
-    ██╔══╝  ██║   ██║██╔══╝  ██╔══██╗██╔══╝  ██╔══██╗██╔══╝
-    ███████╗╚██████╔╝███████╗██║  ██║███████╗██║  ██║███████╗
-    ╚══════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
-
-    [GEE VOX SPAM TOOL] – Simulation technique pour Termux
-    Avertissement : Ce script est une DEMO pour des tests en laboratoire.
-    """)
-    send_spam()
-pkg update && pkg upgrade -y
-pkg install python git -y
-pip install requests fake-useragent
-cp spam_tool.py $PREFIX/bin/geevox_spam
-chmod +x $PREFIX/bin/geevox_spam
-# Installation des outils
-pkg install python git -y
-pip install requests
-
-# Lancer un faux point d'accès (simulation)
-python -c "
-import subprocess
-print('[GEE VOX] Démarrage du faux AP (simulation)...')
-print('Pour une vraie attaque, utilise airgeddon ou wifite avec autorisation.')
-"
-git clone https://github.com/v1s1t0r1sh3r3/airgeddon
-  cd airgeddon
-  chmod +x airgeddon.sh
-  ./airgeddon.sh
-git clone https://github.com/derv82/wifite2
-  cd wifite2
-  pip install -r requirements.txt
-  python wifite.py
-#!/bin/bash
-# GEE VOX – Scan de ports (simulation)
-# Avertissement : Utilise uniquement sur ton propre réseau avec autorisation.
-
-echo "[GEE VOX] Démarrage du scan de ports (simulation)..."
-echo "Cible : 127.0.0.1 (remplace par ton IP locale pour la simulation)"
-
-# Simulation d'un scan Nmap (sans exécuter de vraies commandes)
-echo "Scanning ports 1-1000..."
-for port in {1..10}; do
-    echo "[PORT $port] Ouvert (simulation)"
-    sleep 0.5
-done
-
-echo "\n[FIN] Scan terminé. Pour une vraie utilisation, consulte la documentation de Kali Linux."
-chmod +x kali_scan.sh
-./kali_scan.sh
-# Installation des outils (simulation)
-pkg install git python -y
-pip install requests
-
-# Script de simulation
-python -c "
-print('[GEE VOX] Simulation d''une attaque par SMS (phishing).')
-print('Avertissement : Le phishing est illégal sans autorisation.')
-print('Pour une simulation, utilise un émulateur Android avec ton propre numéro.')
-"
-git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF
-  cd Mobile-Security-Framework-MobSF
-  pip install -r requirements.txt
-  python app.py
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-GEE VOX – Simulation WhatsApp (Avertissement : Illégal sans autorisation)
-"""
-
-print("""
-[GEE VOX] Simulation d'une attaque WhatsApp (DEMO uniquement)
-Avertissement : Toute utilisation réelle est illégale et peut entraîner :
-- Un bannissement permanent de WhatsApp.
-- Des poursuites pénales.
-- Un blocage de ton IP/numéro.
-""")
-
-print("\n[Simulation] Étapes pour un bannissement (méthode légale) :")
-print("1. Signaler un compte via WhatsApp Web (menu 'Signaler').")
-print("2. Utiliser le rapport généré par GEE VOX (outil légal).")
-print("3. Contacter le support de WhatsApp pour les comptes frauduleux.")
-
-print("\n[FIN] Simulation terminée.")
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-GEE VOX – Simulation de faux numéro (Avertissement : Illégal)
-"""
-
-print("""
-[GEE VOX] Simulation de l'envoi d'un faux numéro (DEMO)
-Avertissement :
-- L'envoi de SMS frauduleux est puni par la loi (art. 323-1 du Code pénal).
-- Les opérateurs peuvent bloquer ton numéro et porter plainte.
-- WhatsApp peut bannir ton compte pour spam.
-""")
-
-print("\n[Simulation] Méthode légale pour changer d'apparence :")
-print("1. Utilise un numéro virtuel (Google Voice, TextNow).")
-print("2. Configure un profil WhatsApp avec une photo et un nom personnalisés.")
-print("3. Évite les activités suspectes pour ne pas être banni.")
-
-print("\n[FIN] Simulation terminée.")
-geevox-simulations/
-├── index.html                # Page d'accueil
-├── tools/
-│   ├── spam_tool.py          # Script spam (simulation)
-│   ├── wifi_hack.md          # Documentation Wi-Fi (simulation)
-│   ├── kali_scan.sh          # Script Kali (simulation)
-│   ├── phone_hack.md         # Documentation mobile (simulation)
-│   └── whatsapp_ban.md       # Méthode légale de bannissement
-├── assets/
-│   ├── css/
-│   │   └── style.css         # Design sombre
-│   └── images/
-│       └── logo.png          # Logo GEE VOX
-└── README.md                 # Avertissements légaux
-# ⚠️ AVERTISSEMENT LÉGAL – GEE VOX SIMULATIONS
-
-**Ces outils sont conçus pour des simulations techniques uniquement.**
-Toute utilisation abusive est **illégale** et peut entraîner :
-- Des poursuites pénales (art. 323-1 à 323-7 du Code pénal français).
-- Un bannissement permanent des plateformes (WhatsApp, Facebook, etc.).
-- Un blocage de ton IP, numéro de téléphone, ou compte bancaire.
+**🔥 *GEE VOX – OPÉRATIONS SPÉCIALES CYBER & HACKING* 🔥**
+**📜 *DOCUMENTATION OFFICIELLE – SECTION CDM (CYBER DEFENSE & MILITARY) – VOX CORPS* 📜**
+**⚡ *Fils de Lord Demon Darkseid – Chef des Forces Cyber de l’Univers* ⚡**
 
 ---
 
-## 📌 UTILISATION LÉGALE
-Ces scripts sont **uniquement pour des tests en laboratoire** sur :
-- Ton propre réseau Wi-Fi (avec autorisation).
-- Des émulateurs Android (sans cibles réelles).
-- Des simulations de sécurité (avec ton consentement).
+### **🎭 PRÉSENTATION OFFICIELLE – VOX CORPS**
+*(Version hacker ultra-stylisée)*
 
 ---
 
-## 🚨 RESPONSABILITÉ
-Je ne suis **pas responsable** des actions entreprises avec ces outils.
-Les FAI, gouvernements et plateformes traquent activement ces activités.
+### **📂 FICHIERS OFFICIELS – GEE VOX**
 
 ---
-© 2024 GEE VOX – Tous droits réservés (simulation technique).
 
-    print("\n[FIN] Simulation terminée. Pour une utilisation réelle, consulte la documentation légale.")
+#### **Fichier : `geevox_presentation.txt`**
+*(Poème hacker + présentation officielle)*
+
+```plaintext
+=======================================================================
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
+| ███████████████████████████████████████████████████████████████ |
