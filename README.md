@@ -1,7 +1,6 @@
 **🔥 *GEE VOX – OPÉRATIONS SPÉCIALES CYBER & HACKING* 🔥**
-**📜 *DOCUMENTATION OFFICIELLE – SECTION CDM (CYBER DEFENSE & MILITARY) – VOX CORPS* 📜**
-**⚡ *Fils de Lord Demon Darkseid – Chef des Forces Cyber de l’Univers* ⚡**
-
+**📜 *DOCUMENTATION OFFICIELLE – SECTION CDM (CONFRERIE DARK MAFIA) – VOX CORPS* 📜**
+**⚡ *Fils de Lord Demon Darkseid – Chef des Forces Cyber de l’Univers* et ma femme Mme Vox  ⚡**
 ---
 
 ### **🎭 PRÉSENTATION OFFICIELLE – VOX CORPS**
