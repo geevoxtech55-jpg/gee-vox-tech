@@ -7,7 +7,7 @@
 ║                                                      ║
 ║                 G E E   V O X   T E C H              ║
 ║                                                      ║
-║        T E R M U X  •  C Y B E R S E C U R I T Y     ║
+║        T E R M U X  •  C Y B E R H A K I N G     ║
 ║        D E V E L O P M E N T  •  T E C H             ║
 ║                                                      ║
 ║        > THINK                                       ║
@@ -26,7 +26,7 @@ Je suis développeur  :
 - Termux
 - Linux
 - Développement
-- Cybersécurité
+- Cyberhacking
 - Scripts
 - Automatisation
 - Technologies numériques
